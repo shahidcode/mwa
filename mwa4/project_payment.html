@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" type="text/css" href="payment.css">
+</head>
+<body>
+    <div class="layout">
+        <div class="box">
+            <h1>MyPay</h1>
+            <p>A secure way of payment</p>
+        -------------------------------------------------------------------------
+            <h2>Amount to be paid:</h2>
+        </div>
+
+        <div class="amount"></div>
+
+        <form method="GET" onsubmit="pay()" action="project.html">
+        <div class="details">
+            <p>Cardholder's name</p><input id="name" type="text" required>
+            <p>Card Number</p><input id="card" type="text" placeholder="0000 0000 0000 0000" required>
+            <p>Expiry</p><input id="expiry" type="text" placeholder="00 / 00" required>
+            <p>CVV</p><input id="cvv" type="password" placeholder="000" required><br>
+            <input id="btn" type="submit" value="Pay">
+        </div>
+        </form>
+    </div>
+
+    <script>
+
+        const price = sessionStorage.getItem("SUBTOTAL");
+
+        document.querySelector('.amount').innerHTML = "&#x20b9;"+price+".00";          //&#x20b9,&#8377,&#8360,&#x20a8 used for rupees symbol in HTML...(semicolon is must)
+
+        function pay(){
+            alert("Payment Successful");
+        }
+    </script>
+
+</body>
+</html>  

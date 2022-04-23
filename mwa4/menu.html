@@ -1,0 +1,219 @@
+<body>
+    <header>
+        <a href="#" class="logo">Riwayat</a>
+        <ul class="navigation">
+            <li><a href="project.html">Home</a><li></li>
+            <li><a href="about.html">About</a><li></li>
+            <li><a href="contact.html">Contact</a><li></li>
+            <li><a href="connect.html">Connect</a></li>
+        </ul>
+    </header>
+    <section class="menu" id="menu">
+    <div class="title">
+        <h2 class="titleText" style="color: black;">Menu</h2>
+        <p style="color: black; font-weight: bolder;">Foodies?Get in!</p>
+    </div>
+    <div class="content">
+        <div class="box">
+            <div class="imgBx">
+                <img src="./biryani.jpeg">                     
+            </div>
+            <div class="text">
+                <h3 style="color: black;">Biryani (&#8377; 190)</h3>     <!-- &#x20b9;,&#8377;,&#8360;,&#x20a8; used for rupees symbol in HTML...(semicolon is must) -->
+            </div>
+        </div>
+        <div class="box">
+            <div class="imgBx">
+                <img src="./kebab.jpg">
+            </div>
+            <div class="text">
+                <h3 style="color: black;">Kebabs (&#8377; 100)</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="order">
+        <h1>Order Now</h1>
+        <form action="project_payment.html" method="GET">
+            <div class="order_format">
+                Biryani : <input class="biryaniQty" type="text" placeholder="0"> 
+                kebabs : <input class="kebabsQty" type="text" placeholder="0">
+                SUB TOTAL : <div class="subTotal"></div>
+                <input type="submit" value="Order Now">
+            </div>    
+        </form>
+    </div>
+
+    </section>
+
+    <script type="text/javascript">
+        
+        function orderItems(){
+            const biryaniVal = document.querySelector('.biryaniQty').value;
+            const kebabVal = document.querySelector('.kebabsQty').value;
+
+            const totalprice = document.querySelector('.subTotal').innerHTML= ((biryaniVal*190)+(kebabVal*100));
+
+            sessionStorage.setItem("SUBTOTAL",totalprice);
+        }
+    
+        var order = document.querySelector('.order');
+        order.addEventListener("mouseover",orderItems);
+
+    </script>
+
+</body>
+
+<style>
+*{
+    margin :0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body,html{
+    overflow: hidden;
+}
+
+header{
+    position:absolute;
+    height: 5vh;
+    width:100%;
+    padding: 40px 100px;
+    display: flex;  
+    justify-content: space-between; 
+    align-items: center;
+    background-color: #111;
+}
+
+header .logo{          
+    color: white;
+    font-weight: 700;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+header .navigation{
+    position: relative;
+    display: flex;
+}
+
+header .navigation li{
+    list-style: none;
+    margin-left: 30px;
+}
+
+header .navigation li a{
+    text-decoration:none;
+    color: white;
+    font-weight:500;
+}
+
+
+
+header .navigation li a:hover{
+    color: #2ecc71;
+}
+
+/* menu */
+.menu{
+    background-color: lightgreen;
+    height: 65rem;
+}
+.title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.menu .content{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.menu .content .box{
+    width: 50%;
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow: 0 5px 35px rgba(0,0,0,0.8);
+}
+
+.menu .content .box .imgBx{
+    position:relative;
+    width: 100%;
+    height: 250px;
+}
+
+.menu .content .box .imgBx img{
+    position: absolute;
+    top: 5%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;    
+}
+
+.menu .content .box .text{
+    margin-left: 48%;
+    padding: 15px 0 5px;
+}
+
+.menu .content .box .text h3{
+    font-weight: 600;
+    color: white;
+}
+
+
+.order {
+    position: relative;
+    top: 20%;
+    left: 40%;
+    transform: translate(20rem,-47rem);
+}
+.order h1{
+    font-size: 1.5rem;
+    text-decoration: 3px solid rgb(51, 50, 50) underline;
+}
+
+.order form{
+    display: flex;
+    flex-direction: column;
+}
+.order form .order_format{
+    font-size: 1.1rem;
+    text-align-last: center;
+    margin: 2rem 0 1rem 0;
+    text-align: center;
+    width: 8rem;
+}
+.order_format input{
+    margin: 10px 0 2rem 0;
+}
+.order_format .subTotal{
+    margin: .5rem 0 2rem 0;
+    height: 1.2rem;
+    width: 8.5rem;
+    background-color: white;
+    border: 1px solid rgb(117, 114, 114);
+}
+.order_format input[type="submit"]{
+    border: none;
+    color: black;
+    padding: .7rem;
+    background-color: lightgreen;
+    border-radius: .3rem;
+    box-shadow: -3px -3px 3px rgb(255, 255, 255,0.3),
+                 3px 3px 3px rgba(0,0,0,0.25);
+    cursor: pointer;
+}
+.order_format input[type="submit"]:hover{
+    transform: scale(0.9);
+}
+
+
+</style>

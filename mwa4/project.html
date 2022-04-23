@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <title>
+        biryani
+    </title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="project.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Riwayat</a>
+        <ul class="navigation">
+            <li><a href="project.html">Home</a><li></li>
+            <li><a href="about.html">About</a><li></li>
+            <li><a href="contact.html">Contact</a><li></li>
+            <li><a href="connect.html">Connect</a></li>
+        </ul>
+    </header>
+    <section class="banner" id="banner">        <!-- "id" is necessary for moving from one section to other....here when we click option "Home" above,which has href="banner" it will take us to section id="banner" -->
+        <div class="content">
+            <h2>Riwayat</h2>
+            <p>Estd. 1970</p>
+            <a href="/menu.html" class="btn">Menu</a>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        function feedback(){
+            alert("Thank you for your valuable feedback");
+        }
+        
+        function orderItems(){
+            const biryaniVal = document.querySelector('.biryaniQty').value;
+            const kebabVal = document.querySelector('.kebabsQty').value;
+
+            const totalprice = document.querySelector('.subTotal').innerHTML= ((biryaniVal*190)+(kebabVal*100));
+
+            sessionStorage.setItem("SUBTOTAL",totalprice);
+        }
+    
+        var order = document.querySelector('.order');
+        order.addEventListener("mouseover",orderItems);
+
+    </script>
+
+</body>
+</html>

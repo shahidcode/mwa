@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Tourney:wght@100;300;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(36, 33, 35);
+}
+
+.layout{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.layout .box{
+    position: relative;
+    height: 32rem;
+    width: 25rem; 
+    background-color: rgb(131, 128, 117);
+    border-radius: 20px;
+}
+.box h1{
+    font-size: 1.5rem;
+    color: black;
+    font-family: 'Pacifico', cursive;
+}
+.box p{
+    font-family: cursive;
+    color: rgb(36, 33, 35);
+}   
+.box h2{
+    font-size: 1.3rem;
+    color: rgb(43, 38, 38);
+}
+.amount{
+    position: absolute;                 /* ancestor is .layout */
+    width: 10rem;
+    height: 3rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-5rem,-9rem);
+    background-color: rgb(36, 33, 35);
+    border: 2px solid black;
+    border-radius: 15px;
+    color: white;
+    padding-top: .4rem;
+    font-size: 2rem;
+}
+
+form{
+    position: absolute;
+    top: 40%;
+    left: 31%;
+    transform: translate(-50%,-50%);
+}
+
+.details{
+    position: absolute;
+    margin: 1px 0 0 0;
+}
+
+#name,#card,#expiry,#cvv{
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 1rem;
+    text-align: center  ;
+}
+
+#expiry{
+    width: 4rem;
+}
+
+#cvv{
+    width: 3rem;
+}
+
+.details p{
+    font-weight: bold;
+    font-size: 1.1rem;
+    font-family: 'Yanone Kaffeesatz', sans-serif;;
+}
+
+.details #btn{
+    border-radius: 10px;
+    border: none;
+    height: 2rem;
+    width: 5rem;
+    color: white;
+    background-color: rgb(36, 33, 35);
+    margin-top: .5rem;
+    font-size: 1.3rem;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif; 
+}
+
+#btn:hover{
+    background-color: rgb(20, 18, 18);
+    width: 5.5rem;
+    transition: linear 0.3s;
+    letter-spacing: 2px;
+}
